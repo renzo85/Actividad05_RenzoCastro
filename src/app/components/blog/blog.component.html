@@ -1,0 +1,50 @@
+
+<div class="prettyform"> 
+    
+    <div class="form">
+        Ingresa los siguientes datos de la noticia y presiona el botón "Publicar":
+    </div>
+    
+
+    <div>
+        <label for="titulo" class="prettylabel"> Titulo de la noticia </label>
+        <input type="text" id="titulo" class="prettyinput" [(ngModel)]="titulo">
+    </div>
+
+    <div>
+        <label for="imagen" class="prettylabel"> URL de foto de la noticia </label>
+        <input type="text" id="imagen" class="prettyinput"  [(ngModel)]="imagen">
+    </div>
+
+    <div>
+        <label for="fecha" class="prettylabel"> Fecha de la noticia </label>
+        <input type="date" id="fecha" class="prettyinput"  [(ngModel)]="fecha">
+    </div>
+
+    <div>
+        <label for="cuerpo" class="prettylabel"> Cuerpo de la noticia </label>
+        <input type="text" id="cuerpo" class="prettyinput"  [(ngModel)]="cuerpo">
+    </div>
+
+    <button class="button" (click)="guardar()"> Publicar </button>
+
+</div>
+
+<!-- Pintado de datos del array dentro de la zona de articulos publicados -->
+
+<section class="prettysection"> Articulos publicados
+
+    <div class="row">
+
+        <article *ngFor="let noticia of arrNoticias" >
+            <h3> {{noticia.titulo}} </h3>
+            <div> Fecha de publicación: {{noticia.fecha}}</div>
+            <img src="{{noticia.imagen}}" alt="">
+            <p> {{noticia.cuerpo}}</p>
+        </article>
+
+
+    </div>
+
+
+</section>
